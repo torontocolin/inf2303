@@ -46,12 +46,11 @@ Students who have difficulty speaking in public should see the
 For all classes other than the first and the last, the students will
   prepare “memos” on the readings assigned for that class.
 Each memo should be no longer than 1 page and should be formatted in
-  accordance with a template (to be provided later).
-  
-<!--   this template:
-  [memo_template.doc](memo_template.doc),
-  [memo_template.odt](memo_template.odt),
-  [memo_template.rft](memo_template.rtf). -->
+  accordance with this template:
+  [memo_template.pdf](handouts/memo_template.pdf),
+  [memo_template.odt](handouts/memo_template.odt),
+  [memo_template.doc](handouts/memo_template.doc),
+  [memo_template.rft](handouts/memo_template.rtf).
 
 The purpose of the memos is to help you make better sense of the
   readings and to increase the quality of the in-class discussion by
