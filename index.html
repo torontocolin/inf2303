@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <title>INF2303: Understanding Open Source Software Production</title>
+<style type="text/css">
+@media screen {
+ body {
+  max-width: 1000px;
+  padding-right: 80px;
+  padding-left: 80px;
+ }
+ body, table {
+  font-size: 12pt;
+ }
+ h1 {
+  font-size: 22pt;
+  margin-top: 2em;
+ }
+ .course_title {
+  font-size: 26pt;
+ }
+ h2 {
+  font-size: 18pt;
+  color: #550000;
+  font-weight: normal;
+  margin-bottom: .3em;
+  padding: 10px;
+  margin-left: -12px;
+  border: 1px solid #99e;
+  background-color: #def;
+  border-radius: 4px;
+ }
+ 
+ h2.week {
+  color: #005500;
+ }
+ 
+ h3 {
+  font-size: 16pt;
+  padding-top: 0pt;
+  margin-top: .3em;
+ }
+ td {
+  padding: 10px 15px 10px 10px;
+ }
+ 
+ p {
+  line-height: 150%;
+ }
+ li {
+  line-height: 150%;
+  padding-top: .3em;
+  padding-bottom: .3em;
+ }
+}
+
+@media print {
+ body, table {
+  font-size: 10pt;
+ }
+ h1 {
+  font-size: 14pt;
+ }
+ .course_title {
+  font-size: 16pt;
+ }
+ h2 {
+  font-size: 12pt;
+ }
+ td {
+    padding: 3px 5px 3px 5px;
+ }
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin-left:0px;
+  margin-top: 0px;
+  padding-left: 2px;
+  padding-top: 0px;
+}
+
+.box {
+ margin: 0px;
+ padding: 20px;
+ padding-left: 80px;
+ padding-top: 2px;
+ border-bottom: 1px solid #ddd;
+ border-top: 1px solid #ddd;
+}
+
+#intro {
+ border-left: 20px solid #155EEF;
+}
+
+#readings {
+ border-left: 20px solid #CCCCCC;
+}
+
+#schedule {
+ border-left: 20px solid #15EFA6;
+}
+
+#evaluation {
+ border-left: 20px solid #F03915;
+}
+
+#procedures {
+ border-left: 20px solid #EF8215;
+}
+
+#footer {
+ border-left: 20px solid #828282;
+}
+
+
+
+table {
+ width: 100%;
+ border-spacing: 0px;
+}
+td {
+  border: 1px solid gray;
+  vertical-align: top;
+}
+
+table.invisible td {
+  border: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: .5em;
+}
+
+table.vcentered td {
+  vertical-align: middle;
+}
+.important {
+  font-weight: bold;
+  color: red;
+}
+
+.inforum {
+  font-weight:bold;
+  color: #bb0088;
+}
+.reserve {
+  font-weight:bold;
+  color: #8800bb;
+}
+.electronic {
+  font-weight:bold;
+  color: #004488;  
+}
+
+.no_class {
+  color: gray !important;
+}
+
+</style>
+</head>
+<body>
+<div class='box' id='intro'><p><br/>
+<table class="invisible vcentered">
+ <tr>
+  <td>
+   <img align="left" src="utoronto-ischool-logo.png"/>
+  </td>
+  <td> <br />
+  </td>
+ </tr>
+</table>
+<br/><br/></p>
+<h1>
+ Summer 2013
+</h1>
+
+<h1 class="course_title">
+ INF2303: Special Topics<br/>
+ Understanding Open Source Software
+</h1>
+
+<p><br/></p>
+<table class="invisible">
+
+ <tr>
+  <td width="35%"><b>Class Location & Time:</b></td> 
+  <td width="65%">Mondays and Wednesdays, 7–10pm, Bissell, Rm. 507</td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Course Dates:</b></td> 
+  <td width="65%">July 8 to August 19, 2013</td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Instructor:</b></td> 
+  <td width="65%"><a href="http://takhteyev.org">Yuri Takhteyev</a></td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Office Hours and Location:</b></td> 
+  <td width="65%">TBA</td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Email&nbsp;Address:</b></td> 
+  <td width="65%">yuri.takhteyev@utoronto.ca — <b>please include “INF2303” in the subject line.</b></td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Office&nbsp;Telephone:</b></td> 
+  <td width="65%">N.A.</td>
+ </tr>
+
+ <tr>
+  <td width="35%"><b>Course Website:</b></td> 
+  <td width="65%"><a href="http://takhteyev.org/courses/13S/inf2303/">http://takhteyev.org/courses/13S/inf2303/</a></td>
+ </tr>
+
+</table>
+
+<h1>Course Objectives</h1>
+<p>The course will explore the production of free / open source software
+  (“F/OSS”) — that is, software that users are allowed to modify and
+  redistribute without paying royalties.
+In the recent years such software has grown in prominence.
+Today it includes both popular end-user software such as Mozilla
+  Firefox and Google Chrome, as well as back-end software that today
+  dominates in many domains of IT infrastructure (e.g., the Apache
+  web-server and the GNU/Linux operating system).
+Availability of such software presents both opportunities and
+  challenges to today’s IT professionals.
+Is F/OSS really a “free lunch” or does it present hidden costs? Why do
+  many practitioners insist that choosing royalty-free F/OSS products
+  should not be about saving money on royalties?
+When does it make sense for an organization to adopt a F/OSS solution
+  over a proprietary one?
+When would it make sense to develop a software solution in house and
+  offer it to the world with a F/OSS license?
+To answer such questions it becomes important to understand what F/OSS
+  is (and what is the difference between “free” and “open source”),
+  and where it comes from.
+We would also need to understand who makes such software and why they
+  do so.
+We will ask why individuals and organizations contribute time and
+  money to F/OSS and how they coordinate their activities.
+We will also ask whether the open source software model can be applied
+  to other goods, e.g., “open source textbooks” or “open source
+  pharmaceuticals”?
+In addressing those questions we will draw on a range of social
+  science theories, looking at F/OSS from economic, political and
+  cultural sides.
+We will also ask questions about the technical infrastructure used by
+  F/OSS projects.</p>
+<h1>Student Learning Objectives</h1>
+<p>The students will develop an understanding of free / open source
+  software ecosystem, including its history and current practices.
+They will also learn to draw on their understanding of F/OSS to
+  analyse the opportunities and challenges that such software presents
+  in specific contexts faced by information professionals.
+Finally, they will learn how to extend their observations about free /
+  open source software to other information products.</p>
+<h1>Relationship to Program-Level Master of Information Student Learning Outcomes</h1>
+<p>The course will help students understand and become conversant with an
+  important set of information practices: production of free / open
+  source software.
+It will also provide them with a foundation for analyzing peer
+  production of other information products. (Outcome 1.)</p>
+<p>Students will develop knowledge and values that will help them
+  exercise leadership when it comes to making software choices that
+  broader access to information services for all. (Outcome 2.)</p>
+<p>The students’ work on the term paper will help them develop their
+  research abilities and to apply course material to a specific domain
+  of information studies. (Outcome 3.)</p>
+<p>The students will gain knowledge of a range of social science theories
+  relevant to understanding production of information goods. (Outcome
+  4.)</p>
+<p>Student learning outcomes for the MI program:
+<a href="http://www.ischool.utoronto.ca/studies/learning-outcomes/">http://www.ischool.utoronto.ca/studies/learning-outcomes/</a></p></div><div class='box' id='evaluation'><h1>Course Structure</h1>
+<p>This course will be taught as a seminar.
+While the instructor will at times present material to complement the
+  readings, much of the time will be spent discussing and analyzing
+  the readings.
+Students are expected to take responsibility for their learning of the
+  material through active engagement with the assigned readings,
+  through participation in course discussion, and through their
+  individual work on a research paper.</p>
+<h1>Deliverables and Evaluation</h1>
+<p>Grades will be based on the following components:</p>
+<ul>
+<li>preparation for the class (“memos,” <strong>15%</strong> of the course grade),</li>
+<li>contribution to class discussion (<strong>15%</strong>),</li>
+<li>the term paper (three deliverables jointly worth <strong>50%</strong>),</li>
+<li>reviews of other students’ paper proposals (<strong>10%</strong>),</li>
+<li>a course “patch” (<strong>10%</strong>, see below).</li>
+</ul>
+<h3>Contribution to Class Discussion — 15%</h3>
+<p>As the course will be taught in the form of a seminar, students will
+  be graded for their contribution to the class discussion.
+<span class="important">Please be advised that contribution does not
+  mean attendance.</span>
+(Of course, you cannot contribute without being present.)
+Students who attend the class but remain silent will earn no
+  credit.
+Nor, however, does it mean simply speaking a lot.
+Rather, students are expected to come to class prepared, actively
+  listen to what is being said by others and then make contributions
+  to the discussion that take advantage of their own understanding of
+  the readings and of what has been said up to that point.
+Class discussion will follow a structure that will be described in a
+  handout.
+Each student will be asked to serve as one of the “chairs” for
+  one week’s discussion and as a “panelist” on several other ones.
+Students who have difficulty speaking in public should see the
+  instructor early in the semester, so that we could discuss possible
+  remedies.</p>
+<h3>Memos — 15%</h3>
+<p>For all classes other than the first and the last, the students will
+  prepare “memos” on the readings assigned for that class.
+Each memo should be no longer than 1 page and should be formatted in
+  accordance with a template (to be provided later).</p>
+<!--   this template:
+  [memo_template.doc](memo_template.doc),
+  [memo_template.odt](memo_template.odt),
+  [memo_template.rft](memo_template.rtf). -->
+
+<p>The purpose of the memos is to help you make better sense of the
+  readings and to increase the quality of the in-class discussion by
+  ensuring that all students arrive to class having done the readings
+  and having spent some time thinking about them.</p>
+<p>Each memo should consist of four sections.</p>
+<ul>
+<li>Central issues in the readings;</li>
+<li>The points on which the authors agree and disagree;</li>
+<li>Your position on the issues (with explanation);</li>
+<li>Three questions for discussion in the class (provide a brief
+  explanation of your questions if necessary).</li>
+</ul>
+<p>The memos are due by email <span class="important">by 8 am of the day
+  of each class</span>. (Please see below on the late policy for
+  memos.)
+Students responsible for chairing each class will be tasked with
+  reading and summarizing submitted memos.</p>
+<h3>Term Paper and Presentation - 50%</h3>
+<p>A major component of the course is a term paper exploring a specific
+  topic related to the content of the course.</p>
+<p>There are three deliverables related to this term paper, including:</p>
+<ul>
+<li>a paper proposal,</li>
+<li>a presentation (on August 19),</li>
+<li>the final paper.</li>
+</ul>
+<p>The proposal, the presentation, and the final paper will be graded
+  <span class="important">together</span> and will be jointly worth
+  50% of your grade.</p>
+<p>It is recommended that students work on their papers in <span
+  class="important">teams of two</span>.
+However, they can opt to work individually or in groups of three.</p>
+<p>Students can pick paper topics that best align with their professional
+  interests, as long as there is a clear relationship to the topics
+  discussed in the course and as long as the topic is discussed in
+  appropriate depth.
+Here are some examples of appropriate topics:</p>
+<ul>
+<li>A paper analysing available free / open source software for
+  libraries and making an argument for or against use of such software
+  over proprietary solutions.</li>
+<li>A paper exploring the history of a particular F/OSS product to
+  challenge some of the common assumptions about how such projects
+  work.</li>
+<li>A paper looking at information management practices in a F/OSS
+  project, pointing to ways such practices could be applied in other
+  domains or suggesting improvements.</li>
+<li>A paper analyzing peer production of a particular kind of digital
+  goods other than software.</li>
+</ul>
+<p><i>The list above is meant to exemplify appropriate topics and is not
+  exhaustive.</i></p>
+<p>Due to the short duration of the course, students should start working
+  on their papers <span class="important">very early</span>, ideally
+  not later than the second week of the course.</p>
+<h4>Paper Proposal</h4>
+<p>Prior to developing the paper, each team will prepare a paper
+  proposal.
+The teams will share their paper proposals with the rest of the class
+  to receive feedback from other students.</p>
+<p>The <strong>main text</strong> of the proposal should be up to 2 pages long and
+  should answer the following questions:</p>
+<ul>
+<li>What is the topic that the paper will focus on?</li>
+<li>Why is this topic interesting in the context of this course?</li>
+<li>What claims do you expect to make in this paper and how do you
+  expect to support them?</li>
+</ul>
+<p>Your proposal should also include a <strong>2 page annotated bibliography</strong> of the
+  sources you intend to use.
+Each source should be accompanied by a brief description, stating what
+  it is about and how you plan to use it.</p>
+<p>Paper proposals will not receive individual grades, but will be graded
+  together with the final paper.</p>
+<h4>Final Presentation</h4>
+<p>Each team will make a short (5-10 minutes) presentation about their research on the last day of class.</p>
+<h4>Final Term Paper</h4>
+<p>The final deliverable is a paper of 5,000–7,000 words, due at the end
+  of the semester.
+The papers will be shared with other students and will be evaluated by
+  the instructor according to the following criteria:</p>
+<ul>
+<li><strong>Use of sources.</strong> The paper should be based on substantial
+  research — you should plan to drawing on academic books and
+  articles, not on blogs or Wikipedia. The sources need to be used and
+  documented in an appropriate way.</li>
+<li><strong>Quality of the argument.</strong> The paper should present a coherent and
+  original argument.
+  It should not repeat what is readily available in other sources.
+  It also should not meander through a collection of unrelated ideas.</li>
+<li><strong>Quality of writing.</strong> The paper should be well written. Being well
+  written means your use of language should not stand in the way of
+  the reader’s comprehension of your text, either by obfuscating the
+  meaning or by drawing the reader’s attention from the content of
+  your writing to its form.</li>
+</ul>
+<p>The final grade for the paper will also incorporate an assessment of
+  your original proposal and the presentation.</p>
+<h3>Paper Proposal Reviews — 10%</h3>
+<p>Each student will receive three proposals from other teams and will
+  then be asked to write a review of each proposal.
+The reviews should be constructive in their focus and aim to help the
+  author of each proposal improve their paper.
+Each review should be 1–2 pages long and can include a bibliography if
+  appropriate.
+(If you include a bibliography, do not count it towards the page
+  limit.)</p>
+<h3>A Course “Patch” — 10%</h3>
+<p>Each student will be asked to submit a “patch” (modification) to the
+  course.
+The patches will be submitted via Github, which will include the
+  actual modification and a brief summary.
+Additionally, a one-page justification should be submitted via email.</p></div><div class='box' id='readings'><h1>Readings and Resources</h1>
+<p>The course will rely on readings that fall roughly into two categories.</p>
+<ul>
+<li><strong>Primary sources.</strong> 
+  Those are writings by people closely involved with free / open
+    source software, which will give us a first-hand perspective on
+    this phenomenon.
+  We will be looking at writings by Richard Stallman, Linus Torvalds,
+    and Eric Raymond, as well as a few others.
+  When approaching such texts we will read them in the same way that
+    primary texts are read in humanities, asking questions about the
+    relationship between each text and the historical and cultural
+    millieu in which it was written.
+  Students should not be mislead by the seeming ease of such texts,
+    and should try to dig deeper into them.</li>
+<li><strong>Academic analyses.</strong>
+  Those are academic writings either looking at free / open source
+    software directly or exploring closely related topics such as
+    copyright and history of software.
+  Some of those texts can be quite challenging, as they may be
+    positioned within academic debates the students may be unfamiliar
+    with.
+  Please budget your time accordingly.</li>
+</ul>
+<h4>Availability of the Readings</h4>
+<dl>
+ <dt><span class="inforum">Inforum</span>:</dt>
+ <dd>
+  The reading is a provided in the form of a photocopy, available at
+    the Inforum.
+  <span class="important">(This should be available after June 18.)</span>
+  Those are primarily readings that allow royalty-free redistribution.
+ </dd>
+ <dt><span class="reserve">Reserve</span>:</dt>
+ <dd>
+  The reading is a selection from a book and will be available on
+    reserve at the library (typically Robarts).
+  Use the provided link to find the call number and to see whether the
+    book is currently checked out.
+  Please make sure you read the right pages.
+ </dd>
+ <td><span class="electronic">Online</span>:</td>
+ <dd>
+  The reading is available electronically
+  (either freely or through the library).
+ </dd>
+</dl>
+
+<p>Many readings come from the following books, which are shown in the
+  schedule with abbreviations:</p>
+<blockquote>
+<p><strong>“FSFS”:</strong>
+  Richard Stallman (2002).
+  <em>Free Software, Free Society: Selected Essays of Richard Stallman.</em>
+  Edited by Joshua Gay.
+  Boston, MA: GNU Press.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="inforum">Inforum</span>: yes<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="reserve">Reserve</span>: <a href="http://go.utlib.ca/cat/4765433">http://go.utlib.ca/cat/4765433</a><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="electronic">Online</span>: <a href="http://www.gnu.org/philosophy/fsfs/rms-essays.pdf">http://bit.ly/fsoftfsoc</a></p>
+<p><strong>“Two Bits”:</strong>
+  Chris Kelty (2008).
+  <em>Two Bits: The Cultural Significance of Free Software.</em>,
+  Duke University Press.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="inforum">Inforum</span>: yes<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="reserve">Reserve</span> →  <a href="http://go.utlib.ca/cat/6466551">http://go.utlib.ca/cat/6466551</a><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="electronic">Online</span> → <a href="http://twobits.net/">http://twobits.net/</a></p>
+<p><strong>“Open Sources”</strong>:
+  Chris DiBona, ed. (1999).
+  <em>Open Sources: Voices from the Open Source Revolution.</em>
+  Sebastopol, CA: O’Reilly.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="inforum">Inforum</span>: yes<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="reserve">Reserve</span>: <strong>n.a.</strong><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="electronic">Online</span>: <a href="http://oreilly.com/openbook/opensources/book/">http://bit.ly/osvoices</a></p>
+</blockquote></div><div class='box' id='schedule'><h1>Schedule</h1><h2>Week 1</h2>
+<h3>Monday, July 8, 2013<br/>An Introduction</h3>
+<p>What is free software? What is open source software?
+(What is the difference?)
+Why do we care?
+(Who uses it anyway?)
+What do we know about those phenomena and what do we want to learn about them?
+How will we go about understanding free and open source software in this course?
+Bonus: A quick introduction to the history of computing.</p>
+<ul>
+<li>“Source Code Definition,” the Linux Information Project. <span class='electronic'>Online</span>: <a href='http://www.linfo.org/source_code.html'>http://bit.ly/14xdpSA</a></li>
+<li>“Open Source Definition,” the Linux Information Project. <span class='electronic'>Online</span>: <a href='http://www.linfo.org/open_source.html'>http://bit.ly/194Rgfu</a></li>
+<li>“Open Source Definition,” the Open Source Initiative. <span class='electronic'>Online</span>: <a href='http://opensource.org/osd-annotated'>http://bit.ly/ZK22oT</a></li>
+<li>“Free Software Definition,” the Linux Information Project. <span class='electronic'>Online</span>: <a href='http://www.linfo.org/free_software.html'>http://bit.ly/12GAEMp</a></li>
+<li>“Free Software Definition.” In <b><i>FSFS</i></b>. (Pp. 43–45.)</li>
+<li>Richard Buckman and Joshua Gay (1999/2004).
+“A Note on Software.”
+In <b><i>FSFS</i></b>. (Pp. 3–5.)</li>
+<li>Paul Ceruzzi (2003). “The Early History of Software,
+1952-1968.” Ch. 3 in <em>A History of Modern Computing,</em> 2nd
+edition, Cambridge, MA: The MIT Press. (Pp. 79–108.) <span class='reserve'>Reserve</span>: <a href='http://go.utlib.ca/cat/4828696'>http://go.utlib.ca/cat/4828696</a>, <span class='electronic'>Online</span>: <a href='http://bit.ly/ceruzzi'>http://bit.ly/ceruzzi</a></li>
+</ul>
+<h3>Wednesday, July 10, 2013<br/>Hackers</h3>
+<p>Free software is often associated with "hackers". Who <i>are</i> hackers?</p>
+<ul>
+<li>Linus Torvalds and David Diamond (2001).
+“The Beauty of Programming.”
+Chapter 5 in
+<em>Just for Fun: The Story of an Accidental Revolutionary.</em>
+New York: HarperBusiness. (Pp. 73–77). <span class='inforum'>Inforum</span></li>
+<li>Eric Raymond (1998). “A Brief History of Hackerdom.” In
+<b><i>Open Sources</i></b>. (8 pages.)</li>
+<li>Sam Williams (2002). “The EMACS Commune.”
+Chapter 6
+in <em>Free as in Freedom: Richard Stallman and the Free Software Revolution.</em>
+(Pp. 76–88.) <span class='electronic'>Online</span>: <a href='http://oreilly.com/openbook/freedom/'>http://oreil.ly/13CsSQv</a></li>
+<li>Steven Levy (1984/1994).
+“The Hacker Ethic.”
+Chapter 2
+in <em>Hackers: Heroes of the Computer Revolution.</em>
+New York: Penguin Books.
+(Pp. 39–49.) <span class='inforum'>Inforum</span></li>
+<li>Gabriela Coleman (2013).
+“On Representing Hacker Ethics.”
+In <em>Coding Freedom: The Ethics and Aesthetics of Hacking.</em>
+Princeton, NJ: Princeton University Press.
+15–20 <span class='inforum'>Inforum</span></li>
+<li>Yuri Takhteyev (2012) Selections from
+“Coding Places: Software Practice in a South American City.”
+(Pp. 21–41 and 71–83.)
+Cambridge, MA: The MIT Press. <span class='inforum'>Inforum</span>, <span class='reserve'>Reserve</span>: <a href='http://go.utlib.ca/cat/8677696'>http://go.utlib.ca/cat/8677696</a></li>
+<li>“Hackers: Wizards of the Electronic Age” (video, 26 minutes) <span class='electronic'>Online</span>: <a href='https://www.youtube.com/watch?v=bl_1OybdteY'>http://bit.ly/11wb98X</a></li>
+</ul>
+<h2>Week 2</h2>
+<h3>Monday, July 15, 2013<br/>Intellectual Property: Theory and History</h3>
+<p>To properly contextualize free / open source software, we must first understand
+why software is protected as intellectual property in the first place.
+In this class we look at the history and theory behind intellectual propertly generally.
+What are “public goods”?
+(Specifically, what does it mean for something to be “nonrival” and “non-excludable”?)
+In what sense are ideas and software “public goods”?
+Why might it make sense to limit the use of information goods?
+What are some of the other ways of supporting production of such goods?
+What would be some of the alternatives to intelletual property?</p>
+<ul>
+<li>Greg Mankiw,
+“Public Goods and Common Resources,”
+Chapter 11,
+in <em>Principles of Economics</em>.
+pp. 225–231. <span class='electronic'>Online</span>: <a href='http://holtz.org/Library/Social%20Science/Economics/Public%20Goods%20and%20Common%20Resources%20-%20Mankiw.pdf'>http://bit.ly/11WwUyE</a></li>
+<li>Suzanne Scotchmer (2004). Chapters 1 and 2
+in *Innovation and Incentives.
+Cambridge, MA: The MIT Press.
+(Pp. 1–61.) <span class='inforum'>Inforum</span>, <span class='reserve'>Reserve</span>: <a href='http://go.utlib.ca/cat/5303970'>http://go.utlib.ca/cat/5303970</a></li>
+</ul>
+<h3>Wednesday, July 17, 2013<br/>Software as Intellectual Property</h3>
+<p>How did <em>software</em> get to be protected by intellectual property
+laws? And where did the idea of selling software as a
+“product” come from?</p>
+<ul>
+<li>Martin Campbell-Kelly (2004).
+“Origins of the Software Product Industry, 1965-1970.”
+Chapter 4
+in <em>From Airline Reservations to Sonic the Hedgehog:
+A History of the Software Industry.</em>
+Cambridge, MA: The MIT Press.
+(Pp. 89–119.) <span class='inforum'>Inforum</span>, <span class='reserve'>Reserve</span>: <a href='http://go.utlib.ca/cat/4803374'>http://go.utlib.ca/cat/4803374</a></li>
+<li>Peter Menell (2002). Part I (pp. 68–98) in “Envisioning
+Copyright Law's Digital Future,” UC Berkeley Public Law
+Research Paper No. 95. (Note: <strong>pages 68 to 98 only.</strong>) <span class='electronic'>Online</span>: <a href='http://papers.ssrn.com.myaccess.library.utoronto.ca/sol3/papers.cfm?abstract_id=328561'>http://bit.ly/12GBdWC</a></li>
+</ul>
+<h2>Week 3</h2>
+<h3>Monday, July 22, 2013<br/>The GNU Project</h3>
+<p>How did the free software movement arise in the 1980s? What is
+“copyleft”? In what sense is the free software movement a
+“movement”? How does it work? What is its ideology and why is
+it important? What is the role of non-profit foundations?</p>
+<ul>
+<li>Chris Kelty (2008).
+“Writing Copyright Licenses.”
+Chapter 7 in <b><i>Two Bits</i></b>.
+(Pp. 179–209.)</li>
+<li>Richard Stallman (1999/2004).
+“The Gnu Project.”
+Chapter 1 in <b><i>FSFS</i></b>.
+(Pp. 17–32.)</li>
+<li>Richard Stallman (1999/2004).
+“The Gnu Manifesto.”
+Chapter 2 in <b><i>FSFS</i></b>.
+(Pp. 33–41.)</li>
+<li>The text of the GNU General Public License (18 p.)
+the BSD License (1 p.),
+and the MIT/X License (1/2 p.). <span class='inforum'>Inforum</span></li>
+<li>“Frequently Asked Questions about GNU Licenses.” (No need to bring this to class.) <span class='electronic'>Online</span>: <a href='http://www.gnu.org/licenses/gpl-faq.html'>http://bit.ly/12n8Rzb</a></li>
+</ul>
+<h3>Wednesday, July 24, 2013<br/>From Linux to Open Source</h3>
+<p>How did Linux start? How was it different from GNU?
+Was it really written “just for fun”?
+How did “free software” become “open source”?</p>
+<p><span class="important">Paper proposals due at the beginning
+of class.</span></p>
+<ul>
+<li>Linus Torvalds and David Diamond (2001).
+Selections from
+<em>Just for Fun: The Story of an Accidental Revolutionary.</em>
+New York: HarperBusiness. (Pp. 50–65 and 90-97). <span class='inforum'>Inforum</span></li>
+<li>Chris Kelty (2008).
+“Coordinating Collaboration,”
+chapter 7 in <b><i>Two Bits</i></b>.
+(Pp. 210–229 — we’ll finish this chapter later.)</li>
+<li>Karim Lakhani and Robert Wolf (2005).
+“Why Hackers Do What They Do: Understanding Motivation and Effort in Free/Open Source Software Projects.”
+MIT Sloan Working Paper No. 4425-03.
+(27 p.) <span class='electronic'>Online</span>: <a href='http://papers.ssrn.com/sol3/papers.cfm?abstract_id=443040'>http://bit.ly/1bwNDyi</a></li>
+</ul>
+<h2>Week 4</h2>
+<h3>Monday, July 29, 2013<br/>User Innovation Networks</h3>
+<p>Can production of free software be somehow more efficient?</p>
+<p><span class="important">Proposal reviews due at the beginning
+of class.</span></p>
+<ul>
+<li>Eric Raymond (1997). “The Cathedral and the Bazaar.”
+RedHat Technical Whitepapers.
+(16 p.)
+<i>The copy in the inforum is the original, shorter paper.
+The link is to the updated and expanded version. I recommend reading the original.</i> <span class='inforum'>Inforum</span>, <span class='electronic'>Online</span>: <a href='http://www.catb.org/esr/writings/homesteading/cathedral-bazaar/'>http://bit.ly/19ro7xJ</a></li>
+<li>Eric von Hippel (2002).
+“Open Source Projects as Horizontal Innovation Networks — By and For Users.”
+MIT Sloan Working Paper No. 4366-02.
+(26 p.) <span class='electronic'>Online</span>: <a href='http://papers.ssrn.com/sol3/papers.cfm?abstract_id=328900'>http://bit.ly/11wbt7M</a></li>
+<li>Michael Schwarz and Yuri Takhteyev (2010).
+“Half a Century of Public Software Institutions: Open Source as a Solution to Hold-Up Problem,”
+<em>Journal of Public Economic Theory,</em> Volume 12, Issue 4. <strong>Pages 609–618 only.</strong> <span class='electronic'>Online</span>: <a href='http://onlinelibrary.wiley.com.myaccess.library.utoronto.ca/doi/10.1111/j.1467-9779.2010.01467.x/abstract'>http://bit.ly/11wbt7M</a></li>
+</ul>
+<h3>Wednesday, July 31, 2013<br/>Infrastructure</h3>
+<p>But how do free / open source software projects actually get anything done?
+What tools do they use?
+And how do they manage material resources?</p>
+<ul>
+<li>Eric Raymond (2000).
+“Homesteading the Noosphere.”
+(39 p.) <span class='inforum'>Inforum</span>, <span class='electronic'>Online</span>: <a href='http://www.dvara.net/hk/homesteading.pdf'>http://bit.ly/11wbt7M</a></li>
+<li>Chris Kelty (2008).
+“Coordinating Collaboration,”
+chapter 7 in <b><i>Two Bits</i></b>.
+(Pp. 229–240)</li>
+<li>Linus Torvalds (2007) “Linus Torvalds on git.” (Video, 70 min.) <span class='electronic'>Online</span>: <a href='http://www.youtube.com/watch?v=4XpnKHJAok8'>http://bit.ly/12GCkW8</a></li>
+</ul>
+<h2>Week 5</h2>
+<h3><span class='no_class'>Monday, August 5, 2013<br/>No Class: Civic Holiday</span></h3>
+<h3>Wednesday, August 7, 2013<br/>Open Source and Open Source 2.0</h3>
+<p>HoHas open source gone corporate? If so, what are the implications?</p>
+<ul>
+<li>Eric Raymond (1999). “The Revenge of the Hackers.” In
+<b><i>Open Sources</i></b>.
+(9 p.)</li>
+<li>Chris Kelty (2008).
+“The Movement,”
+chapter 3 in <b><i>Two Bits</i></b>. (Pp. 97–118.)</li>
+<li>Brian Fitzgerald (2006)
+“The Transformation of Open Source Software.”
+MIS Quarterly, 30(3), pp. 587-598. <span class='electronic'>Online</span>: <a href='http://www.jstor.org.myaccess.library.utoronto.ca/discover/10.2307/25148740?uid=2&uid=4&sid=21102309341071'>http://bit.ly/11WxdJS</a></li>
+<li>Joel West and Siobhán O'Mahony (2008).
+“The Role of Participation Architecture in Growing Sponsored Open Source Communities,”
+<em>Industry and Innovation,</em> 15(2), pp. 145–168. <span class='electronic'>Online</span>: <a href='http://www.tandfonline.com.myaccess.library.utoronto.ca/doi/abs/10.1080/13662710801970142'>http://bit.ly/13CuwS3</a></li>
+<li>Greg Kroah-Hartman, Jonathan Corbet, and Amanda McPherson (2009).
+“Linux Kernel Development: How Fast it is Going, Who is Doing It, What They are Doing, and Who is Sponsoring It:
+ An August 2009 Update,”
+ The Linux Foundation.
+ (17 p.) <span class='electronic'>Online</span>: <a href='http://www.linuxfoundation.org/publications/whowriteslinux.pdf'>http://bit.ly/13DHFc5</a></li>
+</ul>
+<h2>Week 6</h2>
+<h3><span class='no_class'>Monday, August 12, 2013<br/>No Class: Yuri at ASA in New York</span></h3>
+<h3>Wednesday, August 14, 2013<br/>Topic TBD</h3>
+<p>This class will be dedicated either to politics of free software
+<em>or</em> to applicability of free software ideas to other domains
+<em>or</em> another topic of students’ choice.
+(The students can choose.)
+The readings for this class will be announced later.</p>
+<h2>Week 7</h2>
+<h3>Monday, August 19, 2013<br/>Student Presentations</h3>
+<p><span class="important">Students present their work.</span> No
+readings.</p>
+<p><span class="important">An electronic submission of the paper
+is due through TurnItIn by midnight on «TBD».</span></p>
+<p><span class="important">An electronic submission of the “course patch”
+is due through TurnItIn by midnight on «TBD».</span></p></div><div class='box' id='procedures'><h1>General Expectations and Procedures</h1>
+<p>The students are expected to come to class prepared
+and submit assignments strictly on time.</p>
+<h3>Late Assignments and Extensions</h3>
+<p>You are expected to complete assignments on time. Assignment not
+submitted by the exact time when their are due will be considered
+late. (E.g., “17:00” means “17:00”, not “17:05.”)</p>
+<h4>Late Policy for Memos</h4>
+<p><span class="important">
+Late memos will recieve half of the credit if submitted before the beginning of class.
+Memos not submitted by the time the class begins will not be accepted at all.</span>
+Students who have missed a memo should focus their efforts on memos for the next class.
+However, each student will be entitled to skipping <span class="important">one</span> memo.</p>
+<h4>Late Policy for Other Deliverables</h4>
+<p>For all other assignments there will be a penalty of
+<span class="important">half a grade (e.g. from A to A–) for any assignment not submitted on time,
+with an an additional half-grade penalty deducted for any further 24 hours</span>
+that the assignment is late.
+Work that is not handed in one week (168 hours) after it was due will not be accepted.</p>
+<h3>TurnItIn</h3>
+<p><span class="important">Normally, students will be required to submit
+the term paper to <a href="http://turnitin.com/">TurnItIn</a> for a review
+of textual similarity and detection of possible plagiarism. In doing
+so, students will allow their essays to be included as source
+documents in the Turnitin.com reference database, where they will be
+used solely for the purpose of detecting plagiarism. The terms that
+apply to the University’s use of the Turnitin.com service are
+described on the Turnitin.com web site.</span></p>
+<p>Students who do not wish to use TurnItIn for submitting their work
+should approach the instructor to discuss alternative ways to
+establish the originality of the paper. This discussion needs to
+happen before the student begins working on the paper.</p>
+<p>For information on how to use TurnItIn, please see this handout:
+<a href="turnitin_instructions.pdf">turnitin_instructions.pdf</a>.</p>
+<h3>Students with Special Needs or Health Considerations</h3>
+<p>All students are welcome in this course and we will make every effort to ensure a meaningful, respectful and positive learning experience for everyone.
+If there are special considerations that you require to help you successfully fulfill the requirements of the course, please see the instructor, the Faculty of Information <a href="http://www.ischool.utoronto.ca/services/personal-advising">Student Services</a>, and / or contact the <a href="http://www.accessibility.utoronto.ca/index.htm">Accessibility Student Office</a> as soon as possible so we can ensure you are able to successfully meet the learning objectives for this course.</p>
+<h3>Writing Resources</h3>
+<p>Please review the material you covered in Cite it Right, familiarize yourself with the <a href="http://www.writing.utoronto.ca/advice/using-sources/how-not-to-plagiarize">How Not to Plagiarize</a> site and <a href="http://www.sgs.utoronto.ca/governance/policies/academicmisconduct.htm">UofT’s policy</a>, and consult the <a href="http://www.sgs.utoronto.ca/informationfor/students/english.htm">Office of English Language and Writing Support</a> as necessary.</p></div>
+<div class="box" id="footer" markdown="1">
+<br/>
+<a href="http://validator.w3.org/check?uri=referer"><img style="border:none" src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+</div>
+

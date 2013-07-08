@@ -1,0 +1,403 @@
+
+- week : 1        
+  classes :
+  
+    - date : Monday, July 8
+      title : An Introduction
+      summary : |
+        What is free software? What is open source software?
+        (What is the difference?)
+        Why do we care?
+        (Who uses it anyway?)
+        What do we know about those phenomena and what do we want to learn about them?
+        How will we go about understanding free and open source software in this course?
+        Bonus: A quick introduction to the history of computing.
+      readings :
+        - bib : |
+            “Source Code Definition,” the Linux Information Project.
+          availability :
+            - type: electronic
+              url: http://www.linfo.org/source_code.html
+              bitly: http://bit.ly/14xdpSA
+        - bib : |
+            “Open Source Definition,” the Linux Information Project.
+          availability :
+            - type: electronic
+              url: http://www.linfo.org/open_source.html
+              bitly: http://bit.ly/194Rgfu
+        - bib : |
+            “Open Source Definition,” the Open Source Initiative.
+          availability :
+            - type : electronic
+              url : http://opensource.org/osd-annotated
+              bitly: http://bit.ly/ZK22oT
+        - bib : |
+            “Free Software Definition,” the Linux Information Project.
+          availability :
+            - type: electronic
+              url: http://www.linfo.org/free_software.html
+              bitly: http://bit.ly/12GAEMp
+        - bib : |
+            “Free Software Definition.” In <b><i>FSFS</i></b>. (Pp. 43–45.)
+        - bib : |
+            Richard Buckman and Joshua Gay (1999/2004).
+            “A Note on Software.”
+            In <b><i>FSFS</i></b>. (Pp. 3–5.)
+        - bib : |
+            Paul Ceruzzi (2003). “The Early History of Software,
+            1952-1968.” Ch. 3 in *A History of Modern Computing,* 2nd
+            edition, Cambridge, MA: The MIT Press. (Pp. 79–108.)
+          availability :
+            - type : reserve
+              url : http://go.utlib.ca/cat/4828696
+            - type : electronic
+              url : http://bit.ly/ceruzzi
+            
+
+    - date : Wednesday, July 10
+      title : Hackers
+      summary: |
+        Free software is often associated with "hackers". Who <i>are</i> hackers?
+      readings :
+
+        - bib : |
+            Linus Torvalds and David Diamond (2001).
+            “The Beauty of Programming.”
+            Chapter 5 in
+            *Just for Fun: The Story of an Accidental Revolutionary.*
+            New York: HarperBusiness. (Pp. 73–77).
+          availability :
+            - type: inforum
+        - bib : |
+            Eric Raymond (1998). “A Brief History of Hackerdom.” In
+            <b><i>Open Sources</i></b>. (8 pages.)
+        - bib : |
+            Sam Williams (2002). “The EMACS Commune.”
+            Chapter 6
+            in *Free as in Freedom: Richard Stallman and the Free Software Revolution.*
+            (Pp. 76–88.)
+          availability :
+            - type :  electronic
+              url : http://oreilly.com/openbook/freedom/
+              bitly : http://oreil.ly/13CsSQv
+        - bib : |
+            Steven Levy (1984/1994).
+            “The Hacker Ethic.”
+            Chapter 2
+            in *Hackers: Heroes of the Computer Revolution.*
+            New York: Penguin Books.
+            (Pp. 39–49.)
+          availability :
+            - type : inforum
+        - bib : |
+            Gabriela Coleman (2013).
+            “On Representing Hacker Ethics.”
+            In *Coding Freedom: The Ethics and Aesthetics of Hacking.*
+            Princeton, NJ: Princeton University Press.
+            15–20
+          availability :
+            - type: inforum
+        - bib : |
+            Yuri Takhteyev (2012) Selections from
+            “Coding Places: Software Practice in a South American City.”
+            (Pp. 21–41 and 71–83.)
+            Cambridge, MA: The MIT Press.
+          availability :
+            - type : inforum
+            - type : reserve
+              url : http://go.utlib.ca/cat/8677696
+        - bib : |
+            “Hackers: Wizards of the Electronic Age” (video, 26 minutes)
+          availability :
+            - type :  electronic
+              url: https://www.youtube.com/watch?v=bl_1OybdteY
+              bitly: http://bit.ly/11wb98X
+
+- week : 2
+  title : Software and Intellectual Property
+  summary : |
+    This week will focus on the theory behind the intellectual
+    property regime that emerged in the 1980s, the history of that
+    regime, and how it got extended to software.
+
+  classes :
+    - date : Monday, July 15
+      title : | 
+        Intellectual Property: Theory and History
+      summary : |
+        To properly contextualize free / open source software, we must first understand
+        why software is protected as intellectual property in the first place.
+        In this class we look at the history and theory behind intellectual propertly generally.
+        What are “public goods”?
+        (Specifically, what does it mean for something to be “nonrival” and “non-excludable”?)
+        In what sense are ideas and software “public goods”?
+        Why might it make sense to limit the use of information goods?
+        What are some of the other ways of supporting production of such goods?
+        What would be some of the alternatives to intelletual property?
+      readings :
+        - bib : |
+            Greg Mankiw,
+            “Public Goods and Common Resources,”
+            Chapter 11,
+            in *Principles of Economics*.
+            pp. 225–231.
+          availability :
+            - type : electronic
+              url : http://holtz.org/Library/Social%20Science/Economics/Public%20Goods%20and%20Common%20Resources%20-%20Mankiw.pdf
+              bitly : http://bit.ly/11WwUyE
+        - bib : |
+            Suzanne Scotchmer (2004). Chapters 1 and 2
+            in *Innovation and Incentives.
+            Cambridge, MA: The MIT Press.
+            (Pp. 1–61.)
+          availability :
+            - type : inforum
+            - type :  reserve
+              url : http://go.utlib.ca/cat/5303970
+
+    - date : Wednesday, July 17
+      title : Software as Intellectual Property
+      summary : |
+        How did *software* get to be protected by intellectual property
+        laws? And where did the idea of selling software as a
+        “product” come from?
+      readings :
+        - bib : |
+            Martin Campbell-Kelly (2004).
+            “Origins of the Software Product Industry, 1965-1970.”
+            Chapter 4
+            in *From Airline Reservations to Sonic the Hedgehog:
+            A History of the Software Industry.*
+            Cambridge, MA: The MIT Press.
+            (Pp. 89–119.)
+          availability :
+            - type : inforum
+            - type : reserve
+              url : http://go.utlib.ca/cat/4803374
+        - bib : |
+            Peter Menell (2002). Part I (pp. 68–98) in “Envisioning
+            Copyright Law's Digital Future,” UC Berkeley Public Law
+            Research Paper No. 95. (Note: **pages 68 to 98 only.**)
+          availability :
+            - type :  electronic
+              url : http://papers.ssrn.com.myaccess.library.utoronto.ca/sol3/papers.cfm?abstract_id=328561
+              bitly : http://bit.ly/12GBdWC
+
+- week : 3
+  classes :
+    - date : Monday, July 22
+      title : |
+        The GNU Project
+      summary : |
+        How did the free software movement arise in the 1980s? What is
+        “copyleft”? In what sense is the free software movement a
+        “movement”? How does it work? What is its ideology and why is
+        it important? What is the role of non-profit foundations?
+      readings :
+        - bib : |
+            Chris Kelty (2008).
+            “Writing Copyright Licenses.”
+            Chapter 7 in <b><i>Two Bits</i></b>.
+            (Pp. 179–209.)
+        - bib : |
+            Richard Stallman (1999/2004).
+            “The Gnu Project.”
+            Chapter 1 in <b><i>FSFS</i></b>.
+            (Pp. 17–32.)
+        - bib : |
+            Richard Stallman (1999/2004).
+            “The Gnu Manifesto.”
+            Chapter 2 in <b><i>FSFS</i></b>.
+            (Pp. 33–41.)
+        - bib : |
+            The text of the GNU General Public License (18 p.)
+            the BSD License (1 p.),
+            and the MIT/X License (1/2 p.).
+            
+          availability :
+            - type : inforum
+        - bib : |
+            “Frequently Asked Questions about GNU Licenses.” (No need to bring this to class.)
+          availability :
+            - type :  electronic
+              url : http://www.gnu.org/licenses/gpl-faq.html
+              bitly: http://bit.ly/12n8Rzb
+
+    - date : Wednesday, July 24
+      title : |
+        From Linux to Open Source
+      due: |        
+        <span class="important">Paper proposals due at the beginning
+        of class.</span>
+      summary : |
+        How did Linux start? How was it different from GNU?
+        Was it really written “just for fun”?
+        How did “free software” become “open source”?
+
+      readings :
+        - bib : |
+            Linus Torvalds and David Diamond (2001).
+            Selections from
+            *Just for Fun: The Story of an Accidental Revolutionary.*
+            New York: HarperBusiness. (Pp. 50–65 and 90-97).
+          availability :
+            - type: inforum
+        - bib : |
+            Chris Kelty (2008).
+            “Coordinating Collaboration,”
+            chapter 7 in <b><i>Two Bits</i></b>.
+            (Pp. 210–229 — we’ll finish this chapter later.)
+        - bib : |
+            Karim Lakhani and Robert Wolf (2005).
+            “Why Hackers Do What They Do: Understanding Motivation and Effort in Free/Open Source Software Projects.”
+            MIT Sloan Working Paper No. 4425-03.
+            (27 p.)
+          availability :
+            - type : electronic
+              url : http://papers.ssrn.com/sol3/papers.cfm?abstract_id=443040
+              bitly: http://bit.ly/1bwNDyi
+
+- week : 4
+
+  classes :
+    - date : Monday, July 29
+      title : User Innovation Networks
+      due : |
+        <span class="important">Proposal reviews due at the beginning
+        of class.</span>
+      summary : |        
+        Can production of free software be somehow more efficient?
+      readings :
+        - bib : |
+            Eric Raymond (1997). “The Cathedral and the Bazaar.”
+            RedHat Technical Whitepapers.
+            (16 p.)
+            <i>The copy in the inforum is the original, shorter paper.
+            The link is to the updated and expanded version. I recommend reading the original.</i>
+          availability :
+            - type : inforum
+            - type : electronic
+              url  : http://www.catb.org/esr/writings/homesteading/cathedral-bazaar/
+              bitly: http://bit.ly/19ro7xJ
+        - bib : |
+            Eric von Hippel (2002).
+            “Open Source Projects as Horizontal Innovation Networks — By and For Users.”
+            MIT Sloan Working Paper No. 4366-02.
+            (26 p.)
+          availability :
+            - type : electronic
+              url  : http://papers.ssrn.com/sol3/papers.cfm?abstract_id=328900
+              bitly: http://bit.ly/11wbt7M
+        - bib : |
+            Michael Schwarz and Yuri Takhteyev (2010).
+            “Half a Century of Public Software Institutions: Open Source as a Solution to Hold-Up Problem,”
+            *Journal of Public Economic Theory,* Volume 12, Issue 4. **Pages 609–618 only.**
+          availability :
+            - type : electronic
+              url  : http://onlinelibrary.wiley.com.myaccess.library.utoronto.ca/doi/10.1111/j.1467-9779.2010.01467.x/abstract
+              bitly: http://bit.ly/11wbt7M
+
+    - date : Wednesday, July 31
+      title : Infrastructure
+      summary : |        
+        But how do free / open source software projects actually get anything done?
+        What tools do they use?
+        And how do they manage material resources?
+      readings :
+        - bib : |
+            Eric Raymond (2000).
+            “Homesteading the Noosphere.”
+            (39 p.)
+          availability :
+            - type : inforum
+            - type : electronic
+              url  : http://www.dvara.net/hk/homesteading.pdf
+              bitly: http://bit.ly/11wbt7M
+        - bib : |
+            Chris Kelty (2008).
+            “Coordinating Collaboration,”
+            chapter 7 in <b><i>Two Bits</i></b>.
+            (Pp. 229–240)
+        - bib : |
+            Linus Torvalds (2007) “Linus Torvalds on git.” (Video, 70 min.)
+          availability :
+            - type : electronic
+              url  : http://www.youtube.com/watch?v=4XpnKHJAok8
+              bitly: http://bit.ly/12GCkW8
+
+- week : 5
+  classes :
+ 
+    - date : Monday, August 5
+      no_class : Civic Holiday
+  
+    - date : Wednesday, August 7
+      title : Open Source and Open Source 2.0
+      summary : |
+        HoHas open source gone corporate? If so, what are the implications?
+      readings :
+        - bib : |
+            Eric Raymond (1999). “The Revenge of the Hackers.” In
+            <b><i>Open Sources</i></b>.
+            (9 p.)
+        - bib : |
+            Chris Kelty (2008).
+            “The Movement,”
+            chapter 3 in <b><i>Two Bits</i></b>. (Pp. 97–118.)
+        - bib : |
+            Brian Fitzgerald (2006)
+            “The Transformation of Open Source Software.”
+            MIS Quarterly, 30(3), pp. 587-598.
+          availability :
+            - type : electronic
+              url  : http://www.jstor.org.myaccess.library.utoronto.ca/discover/10.2307/25148740?uid=2&uid=4&sid=21102309341071
+              bitly: http://bit.ly/11WxdJS       
+        - bib : |
+            Joel West and Siobhán O'Mahony (2008).
+            “The Role of Participation Architecture in Growing Sponsored Open Source Communities,”
+            *Industry and Innovation,* 15(2), pp. 145–168.
+          availability :
+            - type : electronic
+              url  : http://www.tandfonline.com.myaccess.library.utoronto.ca/doi/abs/10.1080/13662710801970142
+              bitly: http://bit.ly/13CuwS3
+        - bib : |
+            Greg Kroah-Hartman, Jonathan Corbet, and Amanda McPherson (2009).
+            “Linux Kernel Development: How Fast it is Going, Who is Doing It, What They are Doing, and Who is Sponsoring It:
+             An August 2009 Update,”
+             The Linux Foundation.
+             (17 p.)
+          availability :
+            - type : electronic
+              url  : http://www.linuxfoundation.org/publications/whowriteslinux.pdf
+              bitly: http://bit.ly/13DHFc5
+
+- week : 6
+
+  classes :  
+    - date : Monday, August 12
+      no_class : Yuri at ASA in New York
+  
+    - date : Wednesday, August 14
+      title : Topic TBD
+      summary : |        
+        This class will be dedicated either to politics of free software
+        _or_ to applicability of free software ideas to other domains
+        _or_ another topic of students’ choice.
+        (The students can choose.)
+        The readings for this class will be announced later.
+
+- week : 7
+
+  classes :
+    - date : Monday, August 19
+      title : Student Presentations
+      due : |
+        <span class="important">Students present their work.</span> No
+        readings.
+        
+        <span class="important">An electronic submission of the paper
+        is due through TurnItIn by midnight on «TBD».</span>
+        
+        <span class="important">An electronic submission of the “course patch”
+        is due through TurnItIn by midnight on «TBD».</span>
+
