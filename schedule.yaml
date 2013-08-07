@@ -334,7 +334,7 @@
     - date : Wednesday, August 7
       title : Open Source and Open Source 2.0
       summary : |
-        HoHas open source gone corporate? If so, what are the implications?
+        Has open source gone corporate? If so, what are the implications?
       readings :
         - bib : |
             Eric Raymond (1999). “The Revenge of the Hackers.” In
@@ -378,13 +378,38 @@
       no_class : Yuri at ASA in New York
   
     - date : Wednesday, August 14
-      title : Topic TBD
+      title : Adoption Case Studies
       summary : |        
-        This class will be dedicated either to politics of free software
-        _or_ to applicability of free software ideas to other domains
-        _or_ another topic of students’ choice.
-        (The students can choose.)
-        The readings for this class will be announced later.
+        In this class we'll be looking at a few specific cases of FOSS adoption.
+      readings :
+      - bib : |
+          Brian Fitzgerald, Jay P. Kesan, Barbara Russo, Maha Shaikh, and Giancarlo Succi (2011).
+          “Hibernia Hospital.” Chapter 3 in *Adopting Open Source Software: A Practical Guide*. Cambridge, MA: The MIT Press.
+        availability :
+          - type : electronic
+            url : http://site.ebrary.com.myaccess.library.utoronto.ca/lib/utoronto/docDetail.action?docID=10509225
+            bitly : http://bit.ly/16zCzBd
+      - bib : |
+          Mat Wall (2011). “Why I chose MongoDB for guardian.co.uk.” (VIDEO)
+          **Watch from the beginning until you get lost, then skipt to 17 minutes and watch until you get lost again.**
+        availability :
+          - type : electronic
+            url: http://www.infoq.com/presentations/Why-I-Chose-MongoDB-for-Guardian
+            bitly: http://bit.ly/130uuXc
+      - bib: |
+          Joab Jackson (2011).
+          “MongoDB competes on speed and flexibility." PCWorld.com
+        availability :
+          - type : electronic
+            url: http://www.pcworld.com/article/229844/article.html
+            bitly: http://bit.ly/11MmJBt
+      - bib: |
+          Klint Finley (2013).
+          “NoSQL database MongoDB reaches beyond software coders.” Wired.com.
+        availability :
+          - type : electronic
+            url : http://www.wired.com/wiredenterprise/2013/03/mongodb-enterprise/
+            bitly : http://bit.ly/14yukYj
 
 - week : 7
 
