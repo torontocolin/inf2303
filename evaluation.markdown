@@ -65,11 +65,14 @@ Each memo should consist of four sections.
 * Three questions for discussion in the class (provide a brief
   explanation of your questions if necessary).
   
-The memos are due by email <span class="important">by 8 am of the day
+The memos are due by email, <span class="important">by 8 am of the day
   of each class</span>. (Please see below on the late policy for
   memos.)
+  Please <span class="important">email your memo as a PDF attachment to all members of your team **and** the instructor.</span>
+  Please <span class="important">put “INF2303 memo for *date* class” for subject.</span>
+  (Subsitute the correct date of the class, e.g., “INF2303 memo for July 10 class.”)
 Students responsible for chairing each class will be tasked with
-  reading and summarizing submitted memos.
+  reading and summarizing submitted memos in writing.
 
 ### Term Paper and Presentation - 50%
 
