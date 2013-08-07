@@ -42,7 +42,7 @@ establish the originality of the paper. This discussion needs to
 happen before the student begins working on the paper.
 
 For information on how to use TurnItIn, please see this handout:
-[turnitin_instructions.pdf](turnitin_instructions.pdf).
+[turnitin_instructions.pdf](handouts/turnitin_instructions.pdf).
 
 ### Students with Special Needs or Health Considerations
 
