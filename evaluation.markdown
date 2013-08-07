@@ -185,6 +185,8 @@ Each review should be 1–2 pages long and can include a bibliography if
 
 Each student will be asked to submit a “patch” (modification) to the
   course.
+The “source files” for the course syllabus are available on Github at
+  <https://github.com/yuri/inf2303>.
 The patches will be submitted via Github, which will include the
   actual modification and a brief summary.
 Additionally, a one-page justification should be submitted via email.
