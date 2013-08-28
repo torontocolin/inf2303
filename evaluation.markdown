@@ -13,13 +13,13 @@ Students are expected to take responsibility for their learning of the
 
 Grades will be based on the following components:
 
-  * preparation for the class (“memos,” **15%** of the course grade),
-  * contribution to class discussion (**15%**),
+  * preparation for the class (“memos”) and contribution to class discussion (**15%** of the course grade),
+  * open source substitution assignment (**15%**),
   * the term paper (three deliverables jointly worth **50%**),
   * reviews of other students’ paper proposals (**10%**),
   * a course “patch” (**10%**, see below).
 
-### Contribution to Class Discussion — 15%
+### Contribution to Class Discussion & Weekly Memos — 15%
 
 As the course will be taught in the form of a seminar, students will
   be graded for their contribution to the class discussion.
@@ -40,8 +40,6 @@ Each student will be asked to serve as one of the “chairs” for
 Students who have difficulty speaking in public should see the
   instructor early in the semester, so that we could discuss possible
   remedies.
-
-### Memos — 15%
 
 For all classes other than the first and the last, the students will
   prepare “memos” on the readings assigned for that class.
@@ -73,6 +71,12 @@ The memos are due by email, <span class="important">by 8 am of the day
   (Subsitute the correct date of the class, e.g., “INF2303 memo for July 10 class.”)
 Students responsible for chairing each class will be tasked with
   reading and summarizing submitted memos in writing.
+
+### Open Source Substitution assignment - 15%
+
+Students are tasked with finding an open source equivalent to a piece of proprietary software which they already use,   and testing it. This must be an equivalent solution to a piece of software students  <span class="important">already</span> use (for example comparing LibreOffice to Microsoft Office).
+
+The deliverable for this assignment is an 8-10 page summary of the student's experiences using the open source equivalent. This includes an evaluation of the software itself, as well as the experience of finding and installing the software, a comparison to the proprietary equivalent, and any other relevant information.
 
 ### Term Paper and Presentation - 50%
 
